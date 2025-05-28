@@ -1,0 +1,43 @@
+<!-- TASK 2: Using Python or PHP or Java or Ruby or JavaScript
+Prompt the user for a number either on a form input or the terminal. Depending on whether the number is even or odd,
+display either “odd” or “even” to the user.
+Hint: how does an even / odd number react differently when divided by 2? 
+Extras:
+If the number is a multiple of 4, print out “divisible by 4”.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function checkEvenOddAndDivisibleBy4() {
+            const input = prompt("Enter a number:");
+            const number = parseInt(input);
+
+            if (isNaN(number)) {
+                console.log("Invalid input. Please enter a valid number.");
+                return;
+            }
+
+            if (number % 2 === 0) {
+                console.log("even");
+
+                if (number % 4 === 0) {
+                    console.log("divisible by 4");
+                }
+            } else {
+                console.log("odd");
+            }
+        }
+
+        checkEvenOddAndDivisibleBy4();
+
+
+
+    </script>
+</body>
+</html>

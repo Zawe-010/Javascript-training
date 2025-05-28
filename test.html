@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Optional Chaining
+        let car = {
+            make:"Toyota",
+            colour:"blue",
+            past_owners:{
+                owner1:{
+                    first_name:"Joyce",
+                    last_name:"Kim",
+                }
+            }
+        }
+        // console.log(car.past_owners.owner2.first_name)
+        console.log(car?.past_owners?.owner2?.first_name)
+    </script>
+
+    <script>
+        // Spread Operator
+        // Copying array
+        let numbers = [1,2,3,4,5]
+        let numbers2 = [...numbers,6,7,8]
+        console.log(numbers2)
+
+        // Merging array
+        let number = [1,2,3,4,5]
+        let number2 = [6,7,8,9,10]
+        let number3 = [...number, ...number2] // or number.concat(number2)
+        console.log(number3)
+
+        // Copy Objects
+        let table1 = {
+            height:"90cm",
+            width:"100cm",
+        }
+        let table2 = {
+            ...table1
+        }
+        console.log(table2)
+
+        // Merge Objects
+        let table3 = {
+                height: "90cm",
+                width: "100cm",
+            }
+            let table4= {
+                colour:"grey",
+            }
+            let table5 =  {
+                ...table3,...table4
+            }
+            console.log(table5)
+
+        // String
+        let name = "John"
+        let spread = [...name]
+        console.log(spread)
+
+    </script>
+</body>
+</html>

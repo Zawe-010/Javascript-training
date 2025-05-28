@@ -1,0 +1,126 @@
+<!-- Task 1
+Create a variable and console log whether a number is odd or even
+
+Create 3 variables and console log the largest of them. Assume that the user would not enter any two numbers which are
+the same.
+
+Create a variable called year and enter the a random year. Check if the year is a leap year or not. A leap year is a
+year that is divisible by 4 not divisible by 100 or divisible by 400. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Task 1
+        let num = 7;
+
+        if (num % 2 === 0) {
+            console.log(num + " is even");
+        } else {
+            console.log(num + " is odd");
+        }
+    </script>
+
+    <script>
+        let a = 10;
+        let b = 25;
+        let c = 15;
+
+        if (a > b && a > c) {
+            console.log("The largest number is: " + a);
+        } else if (b > a && b > c) {
+            console.log("The largest number is: " + b);
+        } else {
+            console.log("The largest number is: " + c);
+        }
+    </script>
+
+    <script>
+        let year = 2024;
+
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+            console.log(year + " is a leap year");
+        } else {
+            console.log(year + " is not a leap year");
+        }
+    </script>
+
+    <!-- Task 2 
+Get user input using prompt("Enter your age:").If user is 18 or older, give feedback:'You are old enough to drive' but if not 18 give another feedback stating to wait for the number of years he/she needs to turn 18.
+
+Task 3
+Write a code which can give grades to students according to their scores:
+80-100,A
+70-79,B
+60-69,C
+50,59,D
+0-49,F
+
+Task 4
+Check if the season is Autumn, Winter, Spring or Summer. If the user input is:
+September, October or November, the season is Autumn.
+December, January or February, the season is Winter.
+March, April or May, the season is Spring.
+June, July or August, the season is Summer.
+-->
+
+    <script>
+        // Task 2: Age check for driving
+        let age = parseInt(prompt("Enter your age:"));
+
+        if (age >= 18) {
+            console.log("You are old enough to drive.");
+        } else {
+            let yearsLeft = 18 - age;
+            console.log("You are left with " + yearsLeft + " year(s) to drive.");
+        }
+
+    </script>
+
+    <script>
+        // Task 3: Grade calculator
+        let score = parseInt(prompt("Enter your score (0-100):"));
+
+        if (score >= 80 && score <= 100) {
+            console.log("Grade: A");
+        } else if (score >= 70 && score <= 79) {
+            console.log("Grade: B");
+        } else if (score >= 60 && score <= 69) {
+            console.log("Grade: C");
+        } else if (score >= 50 && score <= 59) {
+            console.log("Grade: D");
+        } else if (score >= 0 && score <= 49) {
+            console.log("Grade: F");
+        } else {
+            console.log("Invalid score. Please enter a value between 0 and 100.");
+        }
+
+    </script>
+
+    <script>
+        // Task 4: Season checker
+        let month = prompt("Enter the month:").toLowerCase();
+
+        if (month === "september" || month === "october" || month === "november") {
+            console.log("The season is Autumn.");
+        } else if (month === "december" || month === "january" || month === "february") {
+            console.log("The season is Winter.");
+        } else if (month === "march" || month === "april" || month === "may") {
+            console.log("The season is Spring.");
+        } else if (month === "june" || month === "july" || month === "august") {
+            console.log("The season is Summer.");
+        } else {
+            console.log("Invalid month entered.");
+        }
+
+    </script>
+</body>
+
+</html>

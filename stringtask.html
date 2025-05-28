@@ -1,0 +1,48 @@
+<!-- Create a new HTML file(stringtask.html) and attempt the 3 questions below:
+Clean up the following variable to give the clean version in lower case. Using inbuilt methods in the string class
+f_name = “ JOHn .“ to “john”
+Slice the below string to get you the resulting sentence:
+sentence_one = “The Dog Breed is German Shepherd” only display “Breed is German”
+sentence_two = “Defeats for the Clinton forces, this was her moment of triumph” only display “Clinton forces”
+Split the below sentence using a semicolon i.e ; And display length of the result.
+“The lazy dog; ran so fast; it hit the wall.” -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>String Task</title>
+</head>
+
+<body>
+    <h1>Open the browser console to see the results of the string tasks.</h1>
+
+    <script>
+        // Question 1: Clean up the variable to lowercase and remove unwanted characters
+        let f_name = "  JOHn  .";
+        let cleaned_name = f_name.trim().replace('.', '').toLowerCase();
+        console.log("Cleaned Name:", cleaned_name); // Output: "john"
+
+        // Question 2a: Slice sentence_one to get “Breed is German”
+        let sentence_one = "The Dog Breed is German Shepherd";
+        let sliced_one = sentence_one.slice(8, 23);
+        console.log("Sliced Sentence One:", sliced_one); // Output: "Breed is German"
+
+        // Question 2b: Slice sentence_two to get “Clinton forces”
+        let sentence_two = "Defeats for the Clinton forces, this was her moment of triumph";
+        let start = sentence_two.indexOf("Clinton");
+        let end = sentence_two.indexOf("forces") + "forces".length;
+        let sliced_two = sentence_two.slice(start, end);
+        console.log("Sliced Sentence Two:", sliced_two); // Output: "Clinton forces"
+
+        // Question 3: Split the sentence by semicolon and get length
+        let sentence_three = "The lazy dog; ran so fast; it hit the wall.";
+        let split_result = sentence_three.split(";");
+        console.log("Split Result:", split_result);
+        console.log("Number of parts after split:", split_result.length); // Output: 3
+    </script>
+</body>
+
+</html>
+

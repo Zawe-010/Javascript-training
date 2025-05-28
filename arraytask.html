@@ -1,0 +1,46 @@
+<!-- Assignment 1: Create an Array
+Create an array named colors with the following elements: 'red', 'green', 'blue'.
+Assignment 2: Access and Modify Array Elements
+Given the array colors, access the second element and change it to 'pink'. Then, display the modified array.
+Assignment 3: Determine the Length of an Array
+Given the array colors, determine its length and store it in a variable lengthOfColors. Then, display lengthOfColors.
+Assignment 4: Use .pop() Method
+Given the array colors, use the .pop() method to remove the last element from the array. Then, display the modified
+array. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array Task</title>
+</head>
+
+<body>
+    <h1>Open the browser console to see the results of the array tasks.</h1>
+
+    <script>
+        // Assignment 1: Create an Array
+        let colors = ['red', 'green', 'blue'];
+        console.log("Initial Array:", colors);
+    </script>
+
+    <script>
+        // Assignment 2: Access and Modify Array Elements
+        colors[1] = 'pink'; // Change second element (index 1)
+        console.log("Modified Array (second element to 'pink'):", colors);
+    </script>    
+
+    <script>
+        // Assignment 3: Determine the Length of an Array
+        let lengthOfColors = colors.length;
+        console.log("Length of Colors Array:", lengthOfColors);
+    </script>    
+
+    <script>
+        // Assignment 4: Use .pop() Method
+        colors.pop(); // Removes last element
+        console.log("Array after .pop():", colors);
+    </script>
+</body>
+
+</html>

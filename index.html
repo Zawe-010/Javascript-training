@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam molestiae similique rerum, repellat inventore doloremque error id, iure ad tenetur sequi fugiat natus perferendis fugit nisi illum minus corrupti qui?
+        </p>
+    </div>
+
+    <script>
+        console.log("Hello Kenya");
+        let num1 = 10;
+        let num2 = 20;
+        let sum = num1 + num2;
+        alert(sum)
+        console.log(sum);
+    </script>
+
+    <!-- Strings - these are alphanumeric characters and symbols. -->
+    <script>
+        let first_name = "John";
+        let second_name = "Doe";
+        let fullname = first_name +" "+ second_name;
+        console.log(fullname);
+
+    // Trim - remove whitespace from both sides of a String
+        fullname = fullname.toLowerCase().trim();
+        console.log(fullname);
+
+    // Slicing - getting a part of a string
+    // First part is the index where you want to start
+    // Second part represents the index to stop +1
+        let sl  = fullname.slice(5,8)
+        console.log(sl);
+    // Concat - joins two or more strings
+        fullname =  fullname.concat(" ","Kimani");
+        console.log(fullname);
+
+    // Includes - checks if a string contains a specified value
+    console.log(fullname.includes("@")) && fullname.includes("."); // returns true or false
+    </script>
+
+    <script>
+        let num3 = parseInt(prompt("Enter first number"));
+        let num4 = parseInt(prompt("Enter second number"));
+        let sum1 = num3 + num4;
+        alert(sum1)
+        console.log(typeof(num3));
+    </script>
+
+    <script>
+        let data = {
+            name: "John",
+            age: 30,
+            country: " Kenya"    
+        };
+        console.log(data.age);
+        console.log(data["name"]);
+    </script>
+
+    <script>
+        let people = [{
+            name: "John",
+            age: 30,
+            country: "Kenya"
+        },
+        {
+            name: "Jane",
+            age: 25,
+            country: " Uganda"
+        }
+    ];
+    console.log(people[0].age);
+    console.log(typeof(people));
+    console.log(typeof(people[1]['name']));
+
+    // Type conversion (type casting)
+    // Numbers
+    let str = '123'
+    let num = Number(str)
+    console.log(typeof(num))
+
+    // Strings
+    let num_2 = 123
+    let str2 = String(num_2) // num.toString(num_2)
+    console.log(typeof(str2))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- TASK 4: Using Python or PHP or Java or Ruby or JavaScript
+Write a program which accepts email as form input or from terminal. Validate the email by checking if it's a valid
+email.
+Hint: Check if it contains an “@” symbol and “.” symbol. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validateEmail() {
+                const email = prompt("Enter your email:");
+                if (email.includes("@") && email.includes(".")) {
+                    console.log("Valid email");
+                } else {
+                    console.log("Invalid email");
+                }
+            }
+
+            validateEmail();
+
+    </script>
+</body>
+</html>

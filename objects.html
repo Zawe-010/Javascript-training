@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        JS Objects
+    </div>
+
+    <script>
+        let person = {
+            name: "Stacy",
+            age: 20,
+            height: "170cm",
+            job: "Software Developer",
+            isMarried: false,
+            "full name": "Nairobi"
+        }
+        // Using dot notation
+        console.log(person)
+        console.log(person.job)
+        let height = person.height
+        console.log(height)
+        // Using bracket notation
+        console.log(person["age"])
+        console.log(person["full name"])
+        let key = "name"
+        console.log(person.key)
+        console.log(person[key]) // == console.log(person["name"])
+    </script>
+
+    <script>
+        // Nested object
+        let user = {
+            name: "Alice",
+            hobbies: ["cycling", "painting"],
+            posts: [
+                {
+                    id: 1,
+                    title: "My first post",
+                    comments: [
+                        { id: 101, text: "Great post!" },
+                        { id: 102, text: "Thanks for sharing." },
+                    ],
+                },
+                {
+                    id: 2,
+                    title: "Another day",
+                    comments: [],
+                },
+            ],
+        };
+        // Display 'thanks for sharing' in the comment section
+        console.log(user.posts[0].comments[1].text);
+        console.log(Object.keys(user))
+        let values = Object.values(user)
+        console.log(values)
+        let entries = Object.entries(user)
+        console.log(entries)
+    </script>
+
+    <script>
+        // Nested Object
+        let company = {
+            name: "TechNova Inc.",
+            founded: 2012,
+            departments: {
+                engineering: {
+                    head: {
+                        name: "Alice Johnson",
+                        position: "VP of Engineering",
+                    },
+                    teams: {
+                        frontend: {
+                            lead: "Bob Smith",
+                            members: [
+                                {
+                                    name: "Carol",
+                                    role: "Senior Developer",
+                                    skills: {
+                                        js: true, react: true, vue: false, db: [
+                                            {
+                                                postgresql: false,
+                                                nosql: {
+
+                                                    mongodb: ["True", {
+                                                        learning: false,
+                                                    }]
+
+                                                }
+                                            }
+                                        ]
+                                    },
+                                },
+                                {
+                                    name: "David",
+                                    role: "Junior Developer",
+                                    skills: { js: true, react: false, vue: true },
+                                },
+                            ],
+                        },
+                        backend: {
+                            lead: "Eve Black",
+                            members: [
+                                {
+                                    name: "Frank",
+                                    role: "Senior Backend Dev",
+                                    languages: ["Python", "Go", "Node.js"],
+                                },
+                                {
+                                    name: "Grace",
+                                    role: "DevOps",
+                                    certifications: {
+                                        aws: true,
+                                        docker: true,
+                                        kubernetes: true,
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                },
+
+            },
+
+        };
+
+    // Display false in mongodb
+    console.log(company.departments.engineering.teams.frontend.members[0].skills.db[0].nosql.mongodb[1].learning);
+
+    // Display Node.js in languages
+    console.log(company.departments.engineering.teams.backend.members[0].languages[2]);
+
+    // Display true in docker
+    console.log(company.departments.engineering.teams.backend.members[1].certifications.docker);
+
+    // Display the keys of certification and their length
+    const certifications = company.departments.engineering.teams.backend.members[1].certifications;
+
+        const certKeys = Object.keys(certifications);
+        console.log("Certification keys:", certKeys);              // [ 'aws', 'docker', 'kubernetes' ]
+        console.log("Length:", certKeys.length);                   // 3
+
+
+    // Display the values of skills, their length and reverse the order
+    const skills = company.departments.engineering.teams.frontend.members[0].skills;
+
+        const skillValues = Object.values(skills);
+        console.log("Skill values:", skillValues);
+        console.log("Length:", skillValues.length);
+        console.log("Reversed:", [...skillValues].reverse());
+
+        // let modifiedSkills = {};
+        //     let count = 1;
+        //     for (let key in skills) {
+        //         if (typeof skills[key] !== 'object') {
+        //             modifiedSkills[key] = count++;
+        //         } else {
+        //             modifiedSkills[key] = skills[key]; // Leave complex/nested objects untouched
+        //         }
+        //     }
+
+        //     console.log("Modified Skills:", modifiedSkills);
+    </script>
+
+</body>
+
+</html>

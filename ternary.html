@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Ternary Operator
+    </div>
+
+    <!-- <script>
+        let isUser = true
+        let user = isUser ? "Logged in" : "Invalid user"
+        console.log(user)
+    </script> -->
+
+    <!-- <script>
+        let age = prompt("Enter age:")
+        let driver = age >= 18 ? "Old enough to drive" : "Not of age"
+        console.log(driver)
+    </script> -->
+
+    <!-- <script>
+        let number = prompt("Enter a random integer")
+        let even = number % 2 == 0 ? "Even number" : "Odd number"
+        console.log(even)
+    </script> -->
+
+    <script>
+        // Using a ternary operator , check if a number is positive. Take user's input using prompt
+        let num = parseFloat(prompt("Enter a number:"));
+        let result = (num >= 0) ? "The number is positive." : "The number is negative.";
+        console.log(result);
+    </script>
+
+    <script>
+        // Using a ternary operator check if a string is empty
+        let userInput = prompt("Enter a string:");
+        let results = (userInput === "") ? "The string is empty." : "The string is not empty.";
+        console.log(results);
+    </script>
+
+    <script>
+        // Check if a variable is null using ternary operator
+        let value = prompt("Please enter something:");
+        let answer = (value === null) ? "The variable is null (you clicked Cancel)." : "The variable is not null (you entered something).";
+        console.log(answer);
+
+        // or 
+
+        // let value = null;  // You can change this to test other values
+        // let result = (value === null) ? "The variable is null." : "The variable is not null.";
+        // console.log(result);
+    </script>
+</body>
+
+</html>

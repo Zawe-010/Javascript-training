@@ -1,0 +1,85 @@
+<!-- Create a new file called objectTask and attempt the below questions:
+my_object= [23, “Jane”, 560, [“Lesson”, “Maths”, {“currency” : “KES”}], 987, 76,”John”]
+Display:
+1. KES
+2. 560
+3. Maths -->
+<!-- 4. In the object with the key currency, add another key “amount” with value 90
+5. Reverse 987 to 789 without using an inbuilt -method or Assigning 789 manually.
+Hint: arrays can be reversed using reverse() functions
+6. Change the name “John” to “Jane” . -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let my_object = [
+            23,
+            "Jane",
+            560,
+            ["Lesson", "Maths", { "currency": "KES" }],
+            987,
+            76,
+            "John"
+        ];
+
+        // Task 1: Display "KES"
+        let currency = my_object[3][2].currency;
+        console.log("Currency:", currency);
+
+        // Task 2: Display 560
+        let number = my_object[2];
+        console.log("Number:", number);
+
+        // Task 3: Display "Maths"
+        let subject = my_object[3][1];
+        console.log("Subject:", subject);
+
+        // Task 4: Add "amount": 90 to the currency object
+        my_object[3][2].amount = 90;
+        console.log("Added amount:", my_object[3][2].amount);
+
+        // Task 5: Reverse 987 to 789 without using built-in reverse() or manually assigning
+        // let originalNumber = my_object[4]; // 987
+        // let reversed = 0;
+        // let temp = originalNumber;
+
+        // while (temp > 0) {
+        //     let digit = temp % 10;
+        //     reversed = reversed * 10 + digit;
+        //     temp = Math.floor(temp / 10);
+        // }
+        // console.log("Reversed 987:", reversed);
+
+        // or:
+
+        let originalNumber = my_object[4]; // 987
+        // Converts number to string and then to an array
+        let digitsArray = originalNumber.toString().split('');
+        // Reverses the array
+        digitsArray.reverse();
+        // Joins the array back into a string and converts it to an integer
+        let reversedNumber = parseInt(digitsArray.join(''), 10);
+        console.log("Reversed 987:", reversedNumber);
+
+        // or:
+        // let value = my_object[4].toString().split('')
+        // let reverse = value.reverse()
+        // console.log(reverse)
+        // let join = reverse.join('')
+        // console.log(join)
+
+        // Task 6: Change "John" to "Jane"
+        for (let i = 0; i < my_object.length; i++) { if (my_object[i] === "John") { my_object[i] = "Jane"; } }
+        console.log("Updated Name:", my_object[6]);
+    </script>
+</body>
+
+</html>
