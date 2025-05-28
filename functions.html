@@ -33,7 +33,7 @@
     <script>
         // Write a JS function that can take any number and output its cube
         function cube(number) {
-                const result = number ** 3;
+                let result = number ** 3;
                 console.log(result);
             }
 
@@ -47,8 +47,8 @@
     <script>
         // Write a JS function that can reverse a number
         function reverseNumber(num) {
-                const reversedStr = num.toString().split('').reverse().join('');
-                const reversedNum = Math.sign(num) * parseInt(reversedStr);
+                let reversedStr = num.toString().split('').reverse().join('');
+                let reversedNum = Math.sign(num) * parseInt(reversedStr);
                 console.log(reversedNum);
             }
 
@@ -62,7 +62,7 @@
     <script>
         // Write a JS function that can arrange a random string in alphabetical order
         function sortStringAlphabetically(str) {
-                const sortedStr = str.split('').sort().join('');
+                let sortedStr = str.split('').sort().join('');
                 console.log(sortedStr);
             }
 
@@ -75,7 +75,7 @@
     <script>
         // Write a JS function that accepts a string as a parameter and converts the first letter of each word of the string in upper case
         function capitalizeWords(str) {
-                const capitalized = str
+                let capitalized = str
                     .split(' ')
                     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                     .join(' ');
@@ -125,7 +125,7 @@
     <script>
         // Write a JS function to clone / duplicate an array
         function cloneArray(arr) {
-                const cloned = [...arr];  
+                let cloned = [...arr];  
                 console.log(cloned);
             }
 
