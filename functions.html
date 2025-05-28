@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div>
         Functions
@@ -12,7 +14,7 @@
 
     <script>
         // Non-parameterize function - no params
-        function display_name(){
+        function display_name() {
             let name = "Jane"
             console.log(name)
         }
@@ -22,24 +24,24 @@
 
     <script>
         // Parameterize function -params
-        function display_value(value){
+        function display_value(value) {
             console.log(value)
         }
 
-        let numbers = [1,2,3,4]
+        let numbers = [1, 2, 3, 4]
         display_value(numbers)
     </script>
 
     <script>
         // Write a JS function that can take any number and output its cube
         function cube(number) {
-                let result = number ** 3;
-                console.log(result);
-            }
+            let result = number ** 3;
+            console.log(result);
+        }
 
-            cube(3);  
-            cube(-2); 
-            cube(0);  
+        cube(3);
+        cube(-2);
+        cube(0);
 
 
     </script>
@@ -47,91 +49,107 @@
     <script>
         // Write a JS function that can reverse a number
         function reverseNumber(num) {
-                let reversedStr = num.toString().split('').reverse().join('');
-                let reversedNum = Math.sign(num) * parseInt(reversedStr);
-                console.log(reversedNum);
-            }
+            let reversedStr = num.toString().split('').reverse().join('');
+            let reversedNum = Math.sign(num) * parseInt(reversedStr);
+            console.log(reversedNum);
+        }
 
-            reverseNumber(1234);   
-            reverseNumber(-567);   
-            reverseNumber(1000);   
-  
+        reverseNumber(1234);
+        reverseNumber(-567);
+        reverseNumber(1000);
+
 
     </script>
 
     <script>
         // Write a JS function that can arrange a random string in alphabetical order
         function sortStringAlphabetically(str) {
-                let sortedStr = str.split('').sort().join('');
-                console.log(sortedStr);
-            }
+            let sortedStr = str.split('').sort().join('');
+            console.log(sortedStr);
+        }
 
-            sortStringAlphabetically("zebra");    
-            sortStringAlphabetically("webdev");   
-  
+        sortStringAlphabetically("zebra");
+        sortStringAlphabetically("webdev");
+
 
     </script>
 
     <script>
         // Write a JS function that accepts a string as a parameter and converts the first letter of each word of the string in upper case
         function capitalizeWords(str) {
-                let capitalized = str
-                    .split(' ')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ');
-                console.log(capitalized);
-            }
+            let capitalized = str
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+            console.log(capitalized);
+        }
 
-            capitalizeWords("hello world");          
-            capitalizeWords("javaScript is fun");    
+        capitalizeWords("hello world");
+        capitalizeWords("javaScript is fun");
+
+        // or ...
+
+        // function capitalizeWords(str) {
+        //     let words = str.split(' ');
+        //     for (let i = 0; i < words.length; i++) {
+        //         words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        //     }
+        //     let capitalized = words.join(' ');
+        //     console.log(capitalized);
+        // }
+
+        // capitalizeWords("hello world");
+        // capitalizeWords("javaScript is fun");
+
 
     </script>
 
     <script>
         // Write a JS program to calculate multiplication and division of two numbers
         function multiplyAndDivide(a, b) {
-                console.log("Multiplication:", a * b);
+            console.log("Multiplication:", a * b);
 
-                if (b === 0) {
-                    console.log("Division: Division by zero is not allowed");
-                } else {
-                    console.log("Division:", a / b);
-                }
+            if (b === 0) {
+                console.log("Division: Division by zero is not allowed");
+            } else {
+                console.log("Division:", a / b);
             }
+        }
 
-            multiplyAndDivide(10, 2);
-            multiplyAndDivide(10, 0);
+        multiplyAndDivide(10, 2);
+        multiplyAndDivide(10, 0);
 
     </script>
 
     <script>
         // Write a JS program that accept two integers and display the larger
         function printLarger(a, b) {
-                if (a > b) {
-                    console.log(a);
-                } else if (b > a) {
-                    console.log(b);
-                } else {
-                    console.log("Both numbers are equal:", a);
-                }
+            if (a > b) {
+                console.log(a);
+            } else if (b > a) {
+                console.log(b);
+            } else {
+                console.log("Both numbers are equal:", a);
             }
+        }
 
-            printLarger(10, 20);  
-            printLarger(50, 30);  
-            printLarger(5, 5);    
+        printLarger(10, 20);
+        printLarger(50, 30);
+        printLarger(5, 5);
 
     </script>
 
     <script>
         // Write a JS function to clone / duplicate an array
         function cloneArray(arr) {
-                let cloned = [...arr];  
-                console.log(cloned);
-            }
+            let cloned = [...arr];
+            console.log(cloned);
+        }
 
-            cloneArray([1, 2, 3]);          
-            cloneArray(['a', 'b', 'c']);     
+        cloneArray([1, 2, 3]);
+        cloneArray(['a', 'b', 'c']);
 
     </script>
 </body>
+
 </html>
