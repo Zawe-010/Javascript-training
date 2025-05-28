@@ -1,0 +1,40 @@
+<!-- TASK 11: Using Python or PHP or Java or Ruby or JavaScript
+Write a program that takes the date of birth of a person and the program outputs the age in terms of years,months,days
+TODAY. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calculateAge() {
+            let dobInput = prompt("Enter your date of birth (YYYY-MM-DD):");
+            let dob = new Date(dobInput);
+            let today = new Date();
+
+            if (!isNaN(dob.getTime())) {
+                let ageInMilliseconds = today - dob;
+                let ageDate = new Date(ageInMilliseconds);
+
+                let years = ageDate.getUTCFullYear() - 1970;
+                let months = ageDate.getUTCMonth();
+                let days = ageDate.getUTCDate() - 1;
+
+                console.log(`You are ${years} years, ${months} months, and ${days} days old.`);
+            } else {
+                console.log("Invalid date format. Please use YYYY-MM-DD.");
+            }
+        }
+
+        calculateAge();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!-- TASK 12: Using Python or PHP or Java or Ruby or JavaScript
+Write a program that prints the largest of 4 inputs taken as input from a user. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findLargestOfFour() {
+            let nums = [];
+
+            for (let i = 1; i <= 4; i++) {
+                let input = prompt(`Enter number ${i}:`);
+                let num = parseFloat(input);
+                if (!isNaN(num)) {
+                    nums.push(num);
+                } else {
+                    console.log("Invalid number. Please try again.");
+                    i--; // retry this input
+                }
+            }
+
+            let max = Math.max(...nums);
+            console.log(`The largest number is: ${max}`);
+        }
+
+        findLargestOfFour();
+
+    </script>
+</body>
+
+</html>

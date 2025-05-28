@@ -1,0 +1,192 @@
+<!-- TASK 15: Using Python or PHP or Java or Ruby or JavaScript
+Write a program that takes input of someone's basic salary and benefits, adds them to find the gross salary then uses
+the gross salary to find the NHIF.
+To find the Kenya NHIF Rate using THIS LINK: -->
+
+<!-- TASK 16: Using Python or PHP or Java or Ruby or JavaScript
+Continue with the program above, then use the gross salary to find the NSSF.
+To find the Kenya NSSF Rate using 6% of the Gross Salary. BUT ONLY A MINIMUM OF 18,000 Gross Salary CAN BE USED IN NSSF. -->
+
+<!-- Task 17: Using Python or PHP or Java or Ruby or JavaScript
+Continue with the same program and calculate an individual’s NHDF using:
+i.e NHDF = gross_salary * 0.015 -->
+
+<!-- Task 18: Using Python or PHP or Java or Ruby or JavaScript
+Calculate the taxable income.
+i.e taxable_income = gross salary - (NSSF + NHDF + NHIF) -->
+
+<!-- TASK 19: Using Python or PHP or Java or Ruby or JavaScript
+Continue with the same program and find the person's PAYEE using the taxable income above.
+Find the Kenya PAYEE Tax Rate using THIS LINK -->
+
+<!-- Task 20: Using Python or PHP or Java or Ruby or JavaScript
+Continue with the same program and calculate an individual’s Net Salary using:
+net_salary = gross_salary - (nhif + nhdf + nssf + payee) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Payroll {
+                constructor(basicSalary, benefits) {
+                    this.basicSalary = basicSalary;
+                    this.benefits = benefits;
+
+                    // TASK 15: Calculate Gross Salary and NHIF
+                    this.grossSalary = this.calculateGrossSalary();
+                    this.nhif = this.calculateNHIF();
+
+                    // TASK 16: Calculate NSSF
+                    this.nssf = this.calculateNSSF();
+
+                    // TASK 17: Calculate NHDF
+                    this.nhdf = this.calculateNHDF();
+
+                    // TASK 18: Calculate Taxable Income
+                    this.taxableIncome = this.calculateTaxableIncome();
+
+                    // TASK 19: Calculate PAYEE
+                    this.payee = this.calculatePAYEE();
+
+                    // TASK 20: Calculate Net Salary
+                    this.netSalary = this.calculateNetSalary();
+                }
+
+                // TASK 15: Calculate Gross Salary
+                calculateGrossSalary() {
+                    return this.basicSalary + this.benefits;
+                }
+
+                // TASK 15: Calculate NHIF based on gross salary slabs
+                calculateNHIF() {
+                    const salary = this.grossSalary;
+                    if (salary <= 5999) return 150;
+                    else if (salary <= 7999) return 300;
+                    else if (salary <= 11999) return 400;
+                    else if (salary <= 14999) return 500;
+                    else if (salary <= 19999) return 600;
+                    else if (salary <= 24999) return 750;
+                    else if (salary <= 29999) return 850;
+                    else if (salary <= 34999) return 900;
+                    else if (salary <= 39999) return 950;
+                    else if (salary <= 44999) return 1000;
+                    else if (salary <= 49999) return 1100;
+                    else if (salary <= 59999) return 1200;
+                    else if (salary <= 69999) return 1300;
+                    else if (salary <= 79999) return 1400;
+                    else if (salary <= 89999) return 1500;
+                    else if (salary <= 99999) return 1600;
+                    else return 1700;
+                }
+
+                // TASK 16: Calculate NSSF (6% of gross, min salary 18,000)
+                calculateNSSF() {
+                    const salary = this.grossSalary < 18000 ? 18000 : this.grossSalary;
+                    return salary * 0.06;
+                }
+
+                // TASK 17: Calculate NHDF (1.5% of gross salary)
+                calculateNHDF() {
+                    return this.grossSalary * 0.015;
+                }
+
+                // TASK 18: Calculate Taxable Income
+                calculateTaxableIncome() {
+                    return this.grossSalary - (this.nssf + this.nhdf + this.nhif);
+                }
+
+                // TASK 19: Calculate PAYEE based on taxable income and tax bands
+                calculatePAYEE() {
+                    const income = this.taxableIncome;
+                    const personalRelief = 2400;
+
+                    if (income <= 24000) {
+                        return Math.max(0, income * 0.10 - personalRelief);
+                    }
+
+                    let tax = 0;
+                    let remaining = income;
+
+                    // 0 - 24,000 at 10%
+                    if (remaining > 24000) {
+                        tax += 24000 * 0.10;
+                        remaining -= 24000;
+                    } else {
+                        tax += remaining * 0.10;
+                        remaining = 0;
+                    }
+
+                    // Next 8,333 at 25%
+                    if (remaining > 8333) {
+                        tax += 8333 * 0.25;
+                        remaining -= 8333;
+                    } else {
+                        tax += remaining * 0.25;
+                        remaining = 0;
+                    }
+
+                    // Next 467,667 at 30%
+                    if (remaining > 467667) {
+                        tax += 467667 * 0.30;
+                        remaining -= 467667;
+                    } else {
+                        tax += remaining * 0.30;
+                        remaining = 0;
+                    }
+
+                    // Next 300,000 at 32.5%
+                    if (remaining > 300000) {
+                        tax += 300000 * 0.325;
+                        remaining -= 300000;
+                    } else {
+                        tax += remaining * 0.325;
+                        remaining = 0;
+                    }
+
+                    // Remaining at 35%
+                    if (remaining > 0) {
+                        tax += remaining * 0.35;
+                    }
+
+                    tax -= personalRelief;
+                    return tax < 0 ? 0 : tax;
+                }
+
+                // TASK 20: Calculate Net Salary after all deductions
+                calculateNetSalary() {
+                    return this.grossSalary - (this.nhif + this.nhdf + this.nssf + this.payee);
+                }
+
+                // Helper to display all calculated values
+                printPayslip() {
+                    console.log("Basic Salary:", this.basicSalary.toFixed(2));
+                    console.log("Benefits:", this.benefits.toFixed(2));
+                    console.log("Gross Salary:", this.grossSalary.toFixed(2));
+                    console.log("NHIF Deduction:", this.nhif.toFixed(2));
+                    console.log("NSSF Deduction:", this.nssf.toFixed(2));
+                    console.log("NHDF Deduction:", this.nhdf.toFixed(2));
+                    console.log("Taxable Income:", this.taxableIncome.toFixed(2));
+                    console.log("PAYEE Tax:", this.payee.toFixed(2));
+                    console.log("Net Salary:", this.netSalary.toFixed(2));
+                }
+            }
+
+            // Example usage:
+            const basicSalary = parseFloat(prompt("Enter Basic Salary:"));
+            const benefits = parseFloat(prompt("Enter Benefits:"));
+
+            if (isNaN(basicSalary) || isNaN(benefits)) {
+                console.log("Invalid input. Please enter numbers only.");
+            } else {
+                const payroll = new Payroll(basicSalary, benefits);
+                payroll.printPayslip();
+            }
+
+    </script>
+</body>
+</html>
