@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let math = Number(prompt("Enter Maths score:"))
+        let english = Number(prompt("Enter English score:"))
+        let biology = Number(prompt("Enter Biology score:"))
+        let chemistry = Number(prompt("Enter Chemistry score:"))
+
+        let subjects = [
+            { subject: "Maths", score: math, },
+            { subject: "English", score: english, },
+            { subject: "Biology", score: biology, },
+            { subject: "Chemistry", score: chemistry, },
+        ]
+
+        function calculate_grade(subjects){
+            let grades = []
+
+            for(let i = 0 ; i < subjects.length ; i++){
+                let grade;
+                let score = subjects[i].score
+                if(score > 79){
+                    grade = "A"
+                }
+                else if(score >= 60 && score <= 79){
+                    grade = "B"
+                }
+                else if (score >= 49 && score <= 59) {
+                    grade = "C"
+                } 
+                else if (score >= 40 && score <= 49) {
+                    grade = "D"
+                }
+                else{
+                    grade = "E"
+                }
+                grades.push({
+                    subject:subjects[i].subject, score:score, grade:grade
+                })
+            }
+            return grades
+        }
+
+        let grade = calculate_grade(subjects)
+        console.log(grade)
+    </script>
+</body>
+
+</html>
