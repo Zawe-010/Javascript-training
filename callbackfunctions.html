@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Call Back Function
+    </div>
+
+    <script>
+        function greet(name, func) {
+            console.log("Hello", name)
+            func()
+        }
+
+        let name = "Alice"
+
+        // Call Back Function
+        function goodbye() {
+            console.log("Goodbye")
+        }
+
+        // A synchronous tasks
+        greet(name, goodbye)
+    </script>
+</body>
+
+</html>
